@@ -3,6 +3,10 @@ version: '3.4'
 services:
   webapplication1:
     image: ${DOCKER_REGISTRY-}webapplication1
+    container_name: app
+    ports:
+      - '8080:80'
+      - '8082:443'
     build:
       context: .
       dockerfile: WebApplication1/Dockerfile
